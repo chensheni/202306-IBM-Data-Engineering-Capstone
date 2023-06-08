@@ -1,4 +1,14 @@
 # IBM-Data-Engineering-Capstone
+
+Tools and Technologies:
+OLTP database - MySQL
+NoSql database - MongoDB
+Production Data warehouse – DB2 on Cloud
+Staging Data warehouse – PostgreSQL
+Big data platform - Hadoop
+Big data analytics platform – Spark
+Business Intelligence Dashboard - IBM Cognos Analytics
+Data Pipelines - Apache Airflow
  
 In this Capstone project, I Designed a data platform that uses MySQL as an OLTP database and MongoDB as a NoSQL database. Designed and implemented a data warehouse and generated reports from the data. Designed a reporting dashboard that reflects the key metrics of the business. Extracted data from OLTP and NoSQL databases, transformed it and loaded it into the data warehouse, and then created an ETL pipeline. And finally, created a Spark connection to the data warehouse, and then deployed a machine learning model.
 
