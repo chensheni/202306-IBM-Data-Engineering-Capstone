@@ -5,21 +5,20 @@ Scenario
 You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
 
 Objectives
-In this assignment you will:
+
 design the schema for OLTP database.
 load data into OLTP database.
 automate admin tasks.
 
 Tools / Software
+
 MySQL 8.0.22
 phpMyAdmin 5.0.4
 
+1 - Check the lab environment
+\bStart MySQL server.
 
-Exercise 1 - Check the lab environment
-Before you proceed with the assignment :
-
-Start MySQL server.
-Exercise 2 - Design the OLTP Database
+2 - Design the OLTP Database
 Task 1 - Create a database.
 Create a database named sales.
 
