@@ -1,25 +1,74 @@
-# IBM-Data-Engineering-Capstone
+# Module 1: 
 
-Tools and Technologies:
-OLTP database - MySQL
-NoSql database - MongoDB
-Production Data warehouse – DB2 on Cloud
-Staging Data warehouse – PostgreSQL
-Big data platform - Hadoop
-Big data analytics platform – Spark
-Business Intelligence Dashboard - IBM Cognos Analytics
-Data Pipelines - Apache Airflow
- 
-In this Capstone project, I Designed a data platform that uses MySQL as an OLTP database and MongoDB as a NoSQL database. Designed and implemented a data warehouse and generated reports from the data. Designed a reporting dashboard that reflects the key metrics of the business. Extracted data from OLTP and NoSQL databases, transformed it and loaded it into the data warehouse, and then created an ETL pipeline. And finally, created a Spark connection to the data warehouse, and then deployed a machine learning model.
+Scenario
+You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
 
-In Module 1, design the OLTP database for an E-Commerce website, populate the OLTP Database with the data provided and automate the export of the daily incremental data into the data warehouse. 
+Objectives
+In this assignment you will:
+design the schema for OLTP database.
+load data into OLTP database.
+automate admin tasks.
 
-In Module 2, set up a NoSQL database to store the catalog data for an E-Commerce website, load the E-Commerce catalog data into the NoSQL database, and query the E-Commerce catalog data in the NoSQL database. 
+Tools / Software
+MySQL 8.0.22
+phpMyAdmin 5.0.4
 
-In Module 3, design the schema for a data warehouse based on the schema of the OLTP and NoSQL databases. Then create the schema and load the data into fact and dimension tables, automate the daily incremental data insertion into the data warehouse, and create Cubes and Rollups to make the reporting easier. 
 
-In Module 4, create a Cognos data source that points to a data warehouse table, create a bar chart of Quarterly sales of cell phones, create a pie chart of sales of electronic goods by category, and create a line chart of total sales per month for the year 2020. 
+Exercise 1 - Check the lab environment
+Before you proceed with the assignment :
 
-In Module 5, extract data from OLTP, NoSQL, and MongoDB databases into CSV format. Then transform the OLTP data to suit the data warehouse schema and then load the transformed data into the data warehouse.
+Start MySQL server.
+Exercise 2 - Design the OLTP Database
+Task 1 - Create a database.
+Create a database named sales.
 
-In the sixth and final module, use skills in Big Data Analytics to create a Spark connection to the data warehouse, and then deploy a machine learning model on SparkML for making sales projections. 
+Task 2 - Design a table named sales_data.
+Design a table named sales_data based on the sample data given.
+
+
+
+Create the sales_data table in sales database.
+
+Take a screenshot of the sql statement you used and the output.
+
+Name the screenshot as createtable.jpg. (images can be saved with either .jpg or .png extension)
+
+Exercise 3 - Load the Data
+Task 3 - Import the data in the file oltpdata.csv
+Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv
+
+Import the data from oltpdata.csv into sales_data table using phpMyAdmin.
+
+Take a screenshot of the phpMyAdmin import status.
+
+Name the screenshot as importdata.jpg. (images can be saved with either .jpg or .png extension)
+
+Task 4 - List the tables in the database sales.
+Take a screenshot of the command you used and the output.
+
+Name the screenshot as listtables.jpg. (images can be saved with either .jpg or .png extension)
+
+Task 5. Write a query to find out the count of records in the tables sales_data.
+Take a screenshot of the command you used and the output.
+
+Name the screenshot as salesrows.jpg. (images can be saved with either .jpg or .png extension)
+
+Exercise 4 - Set up Admin tasks
+Task 6 - Create an index
+Create an index named ts on the timestamp field.
+
+Task 7 - List indexes
+List indexes on the table sales_data.
+
+Take a screenshot of the command you used and the output.
+
+Name the screenshot as listindexes.jpg. (images can be saved with either .jpg or .png extension)
+
+Task 8 - Write a bash script to export data.
+Write a bash script named datadump.sh that exports all the rows in the sales_data table to a file named sales_data.sql
+
+Take a screenshot of the contents of the datadump.sh bash file command you used and the output.
+
+Name the screenshot as exportdata.jpg. (images can be saved with either .jpg or .png extension)
+
+End of assignment.
