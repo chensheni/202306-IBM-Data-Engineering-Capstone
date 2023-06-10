@@ -15,8 +15,8 @@ Tools / Software
 MySQL 8.0.22
 phpMyAdmin 5.0.4
 
-1 - Check the lab environment
-\bStart MySQL server.
+1 - Check the lab environment  
+Start MySQL server.
 
 2 - Design the OLTP Database
 Task 1 - Create a database.
