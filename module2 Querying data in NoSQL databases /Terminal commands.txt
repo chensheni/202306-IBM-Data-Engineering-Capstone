@@ -1,0 +1,100 @@
+theia@theiadocker-peteshen40:/home/project$ mongoimport
+bash: mongoimport: command not found
+
+theia@theiadocker-peteshen40:/home/project$ wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+--2023-06-10 22:18:53--  https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+Resolving fastdl.mongodb.org (fastdl.mongodb.org)... 18.67.65.94, 18.67.65.93, 18.67.65.82, ...
+Connecting to fastdl.mongodb.org (fastdl.mongodb.org)|18.67.65.94|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 64021650 (61M) [binary/octet-stream]
+Saving to: ‘mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz’
+
+mongodb-database-too 100%[======================>]  61.06M   244MB/s    in 0.2s    
+
+2023-06-10 22:18:54 (244 MB/s) - ‘mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz’ saved [64021650/64021650]
+
+theia@theiadocker-peteshen40:/home/project$ tar -xf mongodb-database-tools-ubuntu1804-x86_64-100.3.1.tgz
+theia@theiadocker-peteshen40:/home/project$ export PATH=$PATH:/home/project/mongodb-database-tools-ubuntu1804-x86_64-100.3.1/bin
+theia@theiadocker-peteshen40:/home/project$ echo "done"
+done
+
+theia@theiadocker-peteshen40:/home/project$ mongoimport
+2023-06-10T22:19:03.046-0400    no collection specified
+2023-06-10T22:19:03.046-0400    using filename '' as collection
+2023-06-10T22:19:03.047-0400    error validating settings: invalid collection name: collection name cannot be an empty string
+
+theia@theiadocker-peteshen40:/home/project$ wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/nosql/catalog.json
+--2023-06-10 22:19:49--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/nosql/catalog.json
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 37503 (37K) [application/json]
+Saving to: ‘catalog.json’
+
+catalog.json         100%[======================>]  36.62K  --.-KB/s    in 0s      
+
+2023-06-10 22:19:49 (107 MB/s) - ‘catalog.json’ saved [37503/37503]
+
+
+theia@theiadocker-peteshen40:/home/project$ start_mongo
+Starting your mongodb database....
+This process can take up to a minute.
+      
+Mongodb started, waiting for all services to be ready....
+      
+Your mongodb server is now ready to use and available with username: root password: MTMwODQtcGV0ZXNo
+
+You can access your mongodb database via:
+ • The browser at: https://peteshen40-8081.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
+ • CommandLine: mongo -u root -p MTMwODQtcGV0ZXNo --authenticationDatabase admin local
+
+theia@theiadocker-peteshen40:/home/project$ mongoimport -u root -p MTMwODQtcGV0ZXNo --authenticationDatabase admin --db catalog --collection electronics --file catalog.json 
+2023-06-10T22:25:31.863-0400    connected to: mongodb://localhost/
+2023-06-10T22:25:31.884-0400    438 document(s) imported successfully. 0 document(s) failed to import.
+
+theia@theiadocker-peteshen40:/home/project$ mongo -u root -p MTMwODQtcGV0ZXNo --authenticationDatabase admin local
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017/local
+MongoDB server version: 3.6.3
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        http://docs.mongodb.org/
+Questions? Try the support group
+        http://groups.google.com/group/mongodb-user
+Server has startup warnings: 
+2023-06-11T02:22:39.064+0000 I STORAGE  [initandlisten] 
+2023-06-11T02:22:39.064+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2023-06-11T02:22:39.064+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2023-06-11T02:22:40.053+0000 I CONTROL  [initandlisten] 
+2023-06-11T02:22:40.053+0000 I CONTROL  [initandlisten] ** WARNING: You are running on a NUMA machine.
+2023-06-11T02:22:40.053+0000 I CONTROL  [initandlisten] **          We suggest launching mongod like this to avoid performance problems:
+2023-06-11T02:22:40.053+0000 I CONTROL  [initandlisten] **              numactl --interleave=all mongod [other options]
+2023-06-11T02:22:40.053+0000 I CONTROL  [initandlisten] 
+> show dbs
+admin    0.000GB
+catalog  0.000GB
+local    0.000GB
+> use catalog
+switched to db catalog
+> show collections
+electronics
+> db.electronics.createIndex({"type":1})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.electronics.count({"type": "laptop"})
+389
+> db.electronics.count({"type": "smart phone"}, {"screen size": 6})
+24
+> db.electronics.aggregate([{"$match":{"type": "smart phone"}}, {"$group":{"_id":"$type", "average": {"$avg":"$screen size"}}}])
+{ "_id" : "smart phone", "average" : 6 }
+> exit
+bye
+
+theia@theiadocker-peteshen40:/home/project$ mongoexport -u root -p MTMwODQtcGV0ZXNo --authenticationDatabase admin --db catalog --collection electronics --out electronics.csv --type=csv --fields _id,type,model
+2023-06-10T22:43:48.333-0400    connected to: mongodb://localhost/
+2023-06-10T22:43:48.341-0400    exported 438 records
