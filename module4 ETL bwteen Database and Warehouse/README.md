@@ -1,4 +1,4 @@
-# Module 4: ETL and data piplines
+# Module 4: ETL bwteen Database and Warehouse
 
 ## Scenario
 
