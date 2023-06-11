@@ -1,0 +1,81 @@
+theia@theiadocker-peteshen40:/home/project$ start_mysql
+Starting your MySQL database....
+This process can take up to a minute.
+      
+MySQL database started, waiting for all services to be ready....
+
+Your MySQL database is now ready to use and available with username: root password: HIDDEN
+
+You can access your MySQL database via:
+ • The browser at: https://peteshen40-8080.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
+ • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN
+theia@theiadocker-peteshen40:/home/project$ mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 107
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database sales;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use sales
+Database changed
+mysql> create table sales_data (product_id varchar, customer_id varchar, price int,quantity int, timestamp timestamp);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ', customer_id varchar, price int,quantity int, timestamp timestamp)' at line 1
+mysql> create table sales_data (product_id varchar, customer_id varchar, price int ,quantity int, timestamp timestamp);
+
+
+mysql> show tables;
++HIDDENHIDDENHIDDENHIDDEN-+
+| Tables_in_sales |
++HIDDENHIDDENHIDDENHIDDEN-+
+| sales_data      |
++HIDDENHIDDENHIDDENHIDDEN-+
+1 row in set (0.01 sec)
+
+
+mysql> select count(*) from sales_date;
+ERROR 1146 (42S02): Table 'sales.sales_date' doesn't exist
+mysql> select count(*) from sales_data;
++HIDDENHIDDEN--+
+| count(*) |
++HIDDENHIDDEN--+
+|     2605 |
++HIDDENHIDDEN--+
+1 row in set (0.00 sec)
+
+
+mysql> show indexes from sales_data;
++HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
+| Table      | Non_unique | Key_name  | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
++HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
+| sales_data |          1 | timestamp |            1 | timestamp   | A         |        2605 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
++HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
+1 row in set (0.00 sec)
+
+
+mysql> select count(*) from sales_date;
+ERROR 1146 (42S02): Table 'sales.sales_date' doesn't exist
+mysql> select count(*) from sales_data;
++HIDDENHIDDEN--+
+| count(*) |
++HIDDENHIDDEN--+
+|     2605 |
++HIDDENHIDDEN--+
+1 row in set (0.00 sec)
+
+
+mysql> mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN sales sales_data > sales_sales_data_dump.sql
+    -> \q
+Bye
+theia@theiadocker-peteshen40:/home/project$ mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN sales sales_data > sales_sales_data_dump.sql
+mysqldump: [Warning] Using a password on the command line interface can be insecure.
+theia@theiadocker-peteshen40:/home/project$
