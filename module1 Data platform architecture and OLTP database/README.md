@@ -1,21 +1,21 @@
-# Module 1: 
+# Module 1: Data platform architecture and OLTP database
 
-Scenario
+## Scenario
 
 You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
 
-Objectives
+## Objectives
 
 design the schema for OLTP database.  
 load data into OLTP database.  
 automate admin tasks.  
 
-Tools / Software  
+## Tools / Software  
 
 MySQL 8.0.22  
 phpMyAdmin 5.0.4  
 
-1 - Check the lab environment    
+### 1 - Check the lab environment    
 Start MySQL server.  
 
 2 - Design the OLTP Database  
