@@ -72,8 +72,8 @@ Create a grouping sets query using the columns country, category, totalsales.
 ### 4 - Create a rollup query  
 Create a rollup query using the columns year, country, and totalsales.
 
-### 7 - Create a cube query  
+### 5 - Create a cube query  
 Create a cube query using the columns year, country, and average sales.
 
-### 8 - Create an MQT  
+### 6 - Create an MQT  
 Create an MQT named total_sales_per_country that has the columns country and total_sales.
