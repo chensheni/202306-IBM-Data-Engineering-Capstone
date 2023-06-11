@@ -1,0 +1,214 @@
+theia@theiadocker-peteshen40:/home/project$ start_mysql
+Starting your MySQL database....
+This process can take up to a minute.
+      
+MySQL database started, waiting for all services to be ready....
+      
+Your MySQL database is now ready to use and available with username: root password: MTg1NDMtcGV0ZXNo
+
+You can access your MySQL database via:
+ • The browser at: https://peteshen40-8080.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
+ • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=MTg1NDMtcGV0ZXNo
+r=root --password=MTg1NDMtcGV0ZXNo/project$ mysql --host=127.0.0.1 --port=3306 --user
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 55
+Server version: 8.0.22 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> \q
+Bye
+-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/mysqlconnect.py.cloud-
+--2023-06-11 15:40:18--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/mysqlconnect.py
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 949 [text/x-python]
+Saving to: ‘mysqlconnect.py’
+
+mysqlconnect.py      100%[======================>]     949  --.-KB/s    in 0s      
+
+2023-06-11 15:40:18 (167 MB/s) - ‘mysqlconnect.py’ saved [949/949]
+
+-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/db2connect.pyus.cloud-
+--2023-06-11 15:40:29--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/db2connect.py
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2020 (2.0K) [application/x-python]
+Saving to: ‘db2connect.py’
+
+db2connect.py        100%[======================>]   1.97K  --.-KB/s    in 0s      
+
+2023-06-11 15:40:29 (198 MB/s) - ‘db2connect.py’ saved [2020/2020]
+
+-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/sales.csv.s3.us.cloud-
+--2023-06-11 15:40:36--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/sales.csv
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 533810 (521K) [text/csv]
+Saving to: ‘sales.csv’
+
+sales.csv            100%[======================>] 521.30K  --.-KB/s    in 0.004s  
+
+2023-06-11 15:40:36 (118 MB/s) - ‘sales.csv’ saved [533810/533810]
+
+theia@theiadocker-peteshen40:/home/project$ wget  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/automation.py
+--2023-06-11 16:04:31--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/ETL/automation.py
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1291 (1.3K) [text/x-python]
+Saving to: ‘automation.py’
+
+automation.py                100%[==============================================>]   1.26K  --.-KB/s    in 0s      
+
+2023-06-11 16:04:31 (255 MB/s) - ‘automation.py’ saved [1291/1291]
+
+theia@theiadocker-peteshen40:/home/project$ cd
+theia@theiadocker-peteshen40:~$ cd ..
+theia@theiadocker-peteshen40:/home$ ls
+project  theia
+theia@theiadocker-peteshen40:/home$ cd project
+theia@theiadocker-peteshen40:/home/project$ ls
+automation.py  db2connect.py  mysqlconnect.py  sales.csv
+theia@theiadocker-peteshen40:/home/project$ python automation.py
+Traceback (most recent call last):
+  File "automation.py", line 2, in <module>
+    import mysql.connector
+ImportError: No module named mysql.connector
+theia@theiadocker-peteshen40:/home/project$ pip install mysql
+Defaulting to user installation because normal site-packages is not writeable
+Collecting mysql
+  Downloading mysql-0.0.3-py3-none-any.whl (1.2 kB)
+Collecting mysqlclient
+  Downloading mysqlclient-2.1.1.tar.gz (88 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.1/88.1 kB 14.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... error
+  error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [16 lines of output]
+      /bin/sh: 1: mysql_config: not found
+      /bin/sh: 1: mariadb_config: not found
+      /bin/sh: 1: mysql_config: not found
+      Traceback (most recent call last):
+        File "<string>", line 2, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-h86j8lar/mysqlclient_7dc300f875fd463aa42ae2a54214a669/setup.py", line 15, in <module>
+          metadata, options = get_config()
+        File "/tmp/pip-install-h86j8lar/mysqlclient_7dc300f875fd463aa42ae2a54214a669/setup_posix.py", line 70, in get_config
+          libs = mysql_config("libs")
+        File "/tmp/pip-install-h86j8lar/mysqlclient_7dc300f875fd463aa42ae2a54214a669/setup_posix.py", line 31, in mysql_config
+          raise OSError("{} not found".format(_mysql_config_path))
+      OSError: mysql_config not found
+      mysql_config --version
+      mariadb_config --version
+      mysql_config --libs
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+
+[notice] A new release of pip is available: 23.0.1 -> 23.1.2
+[notice] To update, run: python3.8 -m pip install --upgrade pip
+theia@theiadocker-peteshen40:/home/project$ python automation.py
+Traceback (most recent call last):
+  File "automation.py", line 2, in <module>
+    import mysql.connector
+ImportError: No module named mysql.connector
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Traceback (most recent call last):
+  File "automation.py", line 2, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
+theia@theiadocker-peteshen40:/home/project$ python3 -m pip install mysql-connector-python
+Collecting mysql-connector-python
+  Downloading https://files.pythonhosted.org/packages/a9/98/3cd603a0130a4bc088942b51c142ce13de3bf21a26b4f960527859a780da/mysql_connector_python-8.0.33-py2.py3-none-any.whl (390kB)
+    100% |████████████████████████████████| 399kB 3.3MB/s 
+Collecting protobuf<=3.20.3,>=3.11.0 (from mysql-connector-python)
+  Downloading https://files.pythonhosted.org/packages/32/27/1141a8232723dcb10a595cc0ce4321dcbbd5215300bf4acfc142343205bf/protobuf-3.19.6-py2.py3-none-any.whl (162kB)
+    100% |████████████████████████████████| 163kB 8.2MB/s 
+Installing collected packages: protobuf, mysql-connector-python
+Successfully installed mysql-connector-python-8.0.33 protobuf-3.19.6
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Traceback (most recent call last):
+  File "automation.py", line 2, in <module>
+    import mysql.connector
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/__init__.py", line 32, in <module>
+    from .connection_cext import CMySQLConnection
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/connection_cext.py", line 40, in <module>
+    from .abstracts import MySQLConnectionAbstract
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/abstracts.py", line 33
+    from __future__ import annotations
+    ^
+SyntaxError: future feature annotations is not defined
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Traceback (most recent call last):
+  File "automation.py", line 2, in <module>
+    import mysql.connector
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/__init__.py", line 32, in <module>
+    from .connection_cext import CMySQLConnection
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/connection_cext.py", line 40, in <module>
+    from .abstracts import MySQLConnectionAbstract
+  File "/home/theia/.local/lib/python3.6/site-packages/mysql/connector/abstracts.py", line 33
+    from __future__ import annotations
+    ^
+SyntaxError: future feature annotations is not defined
+theia@theiadocker-peteshen40:/home/project$ python3 -m pip install mysql-connector-python==8.0.31
+Collecting mysql-connector-python==8.0.31
+  Downloading https://files.pythonhosted.org/packages/08/1f/42d74bae9dd6dcfec67c9ed0f3fa482b1ae5ac5f117ca82ab589ecb3ca19/mysql_connector_python-8.0.31-py2.py3-none-any.whl (352kB)
+    100% |████████████████████████████████| 358kB 2.9MB/s 
+Collecting protobuf<=3.20.1,>=3.11.0 (from mysql-connector-python==8.0.31)
+  Using cached https://files.pythonhosted.org/packages/32/27/1141a8232723dcb10a595cc0ce4321dcbbd5215300bf4acfc142343205bf/protobuf-3.19.6-py2.py3-none-any.whl
+Installing collected packages: protobuf, mysql-connector-python
+Successfully installed mysql-connector-python-8.0.33 protobuf-3.19.6
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Traceback (most recent call last):
+  File "automation.py", line 5, in <module>
+    import ibm_db
+ModuleNotFoundError: No module named 'ibm_db'
+theia@theiadocker-peteshen40:/home/project$ python3 -m pip install ibm-db
+Collecting ibm-db
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/a5/fa/0a8e250b54b6479304f6af2784b94fecafe6954fd3d3daedc0a3c2c1b262/ibm_db-3.1.4.tar.gz (1.4MB)
+    100% |████████████████████████████████| 1.4MB 1.0MB/s 
+Building wheels for collected packages: ibm-db
+  Running setup.py bdist_wheel for ibm-db ... done
+  Stored in directory: /home/theia/.cache/pip/wheels/ec/8b/05/1f3df890d36038228c0bd08a1e48f338c1bf77564bf0477856
+Successfully built ibm-db
+Installing collected packages: ibm-db
+Successfully installed ibm-db-3.1.4
+
+
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Connected to database:  bludb as user:  bwc18996 on host:  b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud
+Last row id on production datawarehouse =  12289
+New rows on staging datawarehouse =  1650
+
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Connected to database:  bludb as user:  bwc18996 on host:  b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud
+Last row id on production datawarehouse =  12289
+New rows on staging datawarehouse =  1650
+(12290, 6715, 80213, 1)
+
+theia@theiadocker-peteshen40:/home/project$ python3 automation.py
+Connected to database:  bludb as user:  bwc18996 on host:  b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud
+Last row id on production datawarehouse =  12289
+New rows on staging datawarehouse =  1650
+New rows inserted into production datawarehouse =  1650
