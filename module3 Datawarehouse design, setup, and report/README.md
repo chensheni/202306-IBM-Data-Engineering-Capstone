@@ -1,45 +1,43 @@
-# Module 1: 
+# Module 3: 
 
 Scenario
 
-You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
+You are a data engineer hired by an ecommerce company named SoftCart.com . The company retails download only items like E-Books, Movies, Songs etc. The company has international presence and customers from all over the world. The company would like to create a data warehouse so that it can create reports like
+
+total sales per year per country  
+total sales per month per category  
+total sales per quarter per country  
+total sales per category per country  
+
+You will use your data warehousing skills to design and implement a data warehouse for the company.
 
 Objectives
 
-design the schema for OLTP database.  
-load data into OLTP database.  
-automate admin tasks.  
+Design a Data Warehouse using the pgAdmin ERD design tool.  
+Create the schema in the Data Warehouse
 
-Tools / Software  
+Tools / Software
 
-MySQL 8.0.22  
-phpMyAdmin 5.0.4  
+ERD Design Tool of pgAdmin  
+PostgreSQL Database Server
 
-1 - Check the lab environment    
-Start MySQL server.  
+1 - Design the dimension table softcartDimDate  
+Using the ERD design tool design the table softcartDimDate. The company is looking at a granularity of a day. Which means they would like to have the ability to generate the report on yearly, monthly, daily, and weekday basis.
 
-2 - Design the OLTP Database  
-Task 1 - Create a database.  
-Create a database named sales.  
+2 - Design the dimension table softcartDimCategory  
+Using the ERD design tool design the table softcartDimCategory.
 
-3 - Design a table named sales_data.  
-Design a table named sales_data based on the sample data given.  
-Create the sales_data table in sales database.
+3 - Design the dimension table softcartDimItem  
+Using the ERD design tool design the table softcartDimItem.
 
-4 - Load the Data  
-Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv  
-Import the data from oltpdata.csv into sales_data table using phpMyAdmin.
+4 - Design the dimension table softcartDimCountry  
+Using the ERD design tool design the table softcartDimCountry.
+ 
+5 - Design the fact table softcartFactSales  
+Using the ERD design tool design the table softcartFactSales.
 
-5 - List the tables in the database sales.  
-Take a screenshot of the command you used and the output.
+6 - Design the relationships   
+Using the ERD design tool design the required relationships(one-to-one, one-to-many etc) amongst the tables.
 
-6 - Write a query to find out the count of records in the tables sales_data.  
-
-7 - Create an index  
-Create an index named ts on the timestamp field.
-
-8 - List indexes  
-List indexes on the table sales_data.
-
-9 - Write a bash script to export data.  
-Write a bash script named datadump.sh that exports all the rows in the sales_data table to a file named sales_data.sql
+7 - Create the schema.  
+Download the schema sql from ERD tool and create the schema in a database named staging.
