@@ -22,42 +22,24 @@ Start MySQL server.
 Task 1 - Create a database.
 Create a database named sales.
 
-Task 2 - Design a table named sales_data.
+3 - Design a table named sales_data.  
 Design a table named sales_data based on the sample data given.  
 Create the sales_data table in sales database.
 
-Exercise 3 - Load the Data
-Task 3 - Import the data in the file oltpdata.csv
+4 - Load the Data  
 Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv  
 Import the data from oltpdata.csv into sales_data table using phpMyAdmin.
 
-
-Task 4 - List the tables in the database sales.
+5 - List the tables in the database sales.  
 Take a screenshot of the command you used and the output.
 
-Name the screenshot as listtables.jpg. (images can be saved with either .jpg or .png extension)
+6 - Write a query to find out the count of records in the tables sales_data.  
 
-Task 5. Write a query to find out the count of records in the tables sales_data.
-Take a screenshot of the command you used and the output.
-
-Name the screenshot as salesrows.jpg. (images can be saved with either .jpg or .png extension)
-
-Exercise 4 - Set up Admin tasks
-Task 6 - Create an index
+7 - Create an index  
 Create an index named ts on the timestamp field.
 
-Task 7 - List indexes
+8 - List indexes  
 List indexes on the table sales_data.
 
-Take a screenshot of the command you used and the output.
-
-Name the screenshot as listindexes.jpg. (images can be saved with either .jpg or .png extension)
-
-Task 8 - Write a bash script to export data.
+9 - Write a bash script to export data.  
 Write a bash script named datadump.sh that exports all the rows in the sales_data table to a file named sales_data.sql
-
-Take a screenshot of the contents of the datadump.sh bash file command you used and the output.
-
-Name the screenshot as exportdata.jpg. (images can be saved with either .jpg or .png extension)
-
-End of assignment.
