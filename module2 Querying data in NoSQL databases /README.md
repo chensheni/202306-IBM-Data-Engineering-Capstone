@@ -1,45 +1,39 @@
-# Module 1: 
+# Module 2: 
 
 Scenario
 
-You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MySQL as an OLTP database. You will be using MySQL to store the OLTP data.
+You are a data engineer at an e-commerce company. Your company needs you to design a data platform that uses MongoDB as a NoSQL database. You will be using MongoDB to store the e-commerce catalog data.
 
 Objectives
 
-design the schema for OLTP database.  
-load data into OLTP database.  
-automate admin tasks.  
+import data into a MongoDB database.  
+query data in a MongoDB database.  
+export data from MongoDB.  
 
 Tools / Software  
 
-MySQL 8.0.22  
-phpMyAdmin 5.0.4  
+MongoDB Server  
+MongoDB Command Line Backup Tools  
 
-1 - Check the lab environment    
-Start MySQL server.  
+1 - Check the lab environment
+Before you proceed with the assignment :
 
-2 - Design the OLTP Database  
-Task 1 - Create a database.  
-Create a database named sales.  
+Check if you have the ‘mongoimport’ and ‘mongoexport’ installed on the lab, otherwise install them.  
+Download the catalog.json file from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/nosql/catalog.json.
 
-3 - Design a table named sales_data.  
-Design a table named sales_data based on the sample data given.  
-Create the sales_data table in sales database.
+2 - Working with MongoDB
+Task 1 - Import ‘catalog.json’ into mongodb server into a database named ‘catalog’ and a collection named ‘electronics’
 
-4 - Load the Data  
-Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv  
-Import the data from oltpdata.csv into sales_data table using phpMyAdmin.
+3 - List out all the databases
 
-5 - List the tables in the database sales.  
-Take a screenshot of the command you used and the output.
+4 - List out all the collections in the database catalog.
 
-6 - Write a query to find out the count of records in the tables sales_data.  
+5 - Create an index on the field “type”
 
-7 - Create an index  
-Create an index named ts on the timestamp field.
+6 - Write a query to find the count of laptops
 
-8 - List indexes  
-List indexes on the table sales_data.
+7 - Write a query to find the number of smart phones with screen size of 6 inches.
 
-9 - Write a bash script to export data.  
-Write a bash script named datadump.sh that exports all the rows in the sales_data table to a file named sales_data.sql
+8 - Write a query to find out the average screen size of smart phones.
+
+9 - Export the fields _id, “type”, “model”, from the ‘electronics’ collection into a file named electronics.csv
