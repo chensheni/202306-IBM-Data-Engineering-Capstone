@@ -23,25 +23,14 @@ Task 1 - Create a database.
 Create a database named sales.
 
 Task 2 - Design a table named sales_data.
-Design a table named sales_data based on the sample data given.
-
-
-
+Design a table named sales_data based on the sample data given.  
 Create the sales_data table in sales database.
-
-Take a screenshot of the sql statement you used and the output.
-
-Name the screenshot as createtable.jpg. (images can be saved with either .jpg or .png extension)
 
 Exercise 3 - Load the Data
 Task 3 - Import the data in the file oltpdata.csv
-Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv
-
+Download the file oltpdata.csv from https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DB0321EN-SkillsNetwork/oltp/oltpdata.csv  
 Import the data from oltpdata.csv into sales_data table using phpMyAdmin.
 
-Take a screenshot of the phpMyAdmin import status.
-
-Name the screenshot as importdata.jpg. (images can be saved with either .jpg or .png extension)
 
 Task 4 - List the tables in the database sales.
 Take a screenshot of the command you used and the output.
