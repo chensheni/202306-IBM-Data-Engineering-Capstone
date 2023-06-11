@@ -1,0 +1,31 @@
+SELECT b.country, c.category, sum(a.amount) AS totalsales
+FROM FACTSALES a 
+LEFT JOIN DIMCOUNTRY b on a.countryid = b.countryid
+LEFT JOIN DIMCATEGORY c on a.categoryid = c.categoryid
+GROUP BY GROUPING SETS (b.country, c.category)
+
+SELECT b.country, c.year, sum(a.amount) AS totalsales
+FROM FACTSALES a 
+LEFT JOIN DIMCOUNTRY b on a.countryid = b.countryid
+LEFT JOIN DIMDATE c on a.DATEID = c.DATEID
+GROUP BY ROLLUP (b.country, c.year)
+
+SELECT b.country, c.year, avg(a.amount) AS avgsales
+FROM FACTSALES a 
+LEFT JOIN DIMCOUNTRY b on a.countryid = b.countryid
+LEFT JOIN DIMDATE c on a.DATEID = c.DATEID
+GROUP BY CUBE (b.country, c.year)
+
+CREATE TABLE total_sales_per_country (country, total_sales) AS (
+	SELECT b.country, SUM(a.amount) as total_sales
+	FROM FACTSALES a
+	LEFT JOIN DIMCOUNTRY b on a.countryid = b.countryid 
+	GROUP BY b.country
+)
+DATA INITIALLY DEFERRED
+REFRESH DEFERRED
+MAINTAINED BY SYSTEM;
+
+REFRESH TABLE total_sales_per_country;
+
+SELECT * FROM total_sales_per_country;
