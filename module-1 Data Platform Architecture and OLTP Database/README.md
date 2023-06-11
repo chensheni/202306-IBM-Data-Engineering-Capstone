@@ -6,21 +6,21 @@ You are a data engineer at an e-commerce company. Your company needs you to desi
 
 Objectives
 
-design the schema for OLTP database.
-load data into OLTP database.
-automate admin tasks.
+design the schema for OLTP database.  
+load data into OLTP database.  
+automate admin tasks.  
 
-Tools / Software
+Tools / Software  
 
-MySQL 8.0.22
-phpMyAdmin 5.0.4
+MySQL 8.0.22  
+phpMyAdmin 5.0.4  
 
-1 - Check the lab environment  
-Start MySQL server.
+1 - Check the lab environment    
+Start MySQL server.  
 
-2 - Design the OLTP Database
-Task 1 - Create a database.
-Create a database named sales.
+2 - Design the OLTP Database  
+Task 1 - Create a database.  
+Create a database named sales.  
 
 3 - Design a table named sales_data.  
 Design a table named sales_data based on the sample data given.  
