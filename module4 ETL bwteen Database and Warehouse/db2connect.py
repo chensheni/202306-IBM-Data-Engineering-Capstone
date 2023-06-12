@@ -8,7 +8,7 @@ import ibm_db
 
 dsn_hostname = "b1bc1829-6f45-4cd4-bef4-10cf081900bf.c1ogj3sd0tgtu0lqde00.databases.appdomain.cloud" # e.g.: "dashdb-txn-sbox-yp-dal09-04.services.dal.bluemix.net"
 dsn_uid = "bwc18996"        # e.g. "abc12345"
-dsn_pwd = "nqI0EiJ7SjxCAay4"      # e.g. "7dBZ3wWt9XN6$o0J"
+dsn_pwd = "HIDDENCODE"      # e.g. "7dBZ3wWt9XN6$o0J"
 dsn_port = "32304"                # e.g. "50000" 
 dsn_database = "bludb"            # i.e. "BLUDB"
 dsn_driver = "{IBM DB2 ODBC DRIVER}" # i.e. "{IBM DB2 ODBC DRIVER}"           

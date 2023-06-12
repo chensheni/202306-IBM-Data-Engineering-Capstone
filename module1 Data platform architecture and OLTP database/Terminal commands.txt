@@ -4,12 +4,12 @@ This process can take up to a minute.
       
 MySQL database started, waiting for all services to be ready....
 
-Your MySQL database is now ready to use and available with username: root password: HIDDEN
+Your MySQL database is now ready to use and available with username: root password: HIDDENCODE
 
 You can access your MySQL database via:
- • The browser at: https://peteshen40-8080.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
- • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN
-theia@theiadocker-peteshen40:/home/project$ mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN
+ • The browser at: https://peteshen40-8080.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.aiHIDDENCODECODE
+ • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDENCODE
+theia@theiadocker-peteshen40:/home/project$ mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDENCODE
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 107
@@ -34,48 +34,48 @@ mysql> create table sales_data (product_id varchar, customer_id varchar, price i
 
 
 mysql> show tables;
-+HIDDENHIDDENHIDDENHIDDEN-+
++HIDDENCODEHIDDENCODEHIDDENCODEHIDDENCODE-+
 | Tables_in_sales |
-+HIDDENHIDDENHIDDENHIDDEN-+
++HIDDENCODEHIDDENCODEHIDDENCODEHIDDENCODE-+
 | sales_data      |
-+HIDDENHIDDENHIDDENHIDDEN-+
++HIDDENCODEHIDDENCODEHIDDENCODEHIDDENCODE-+
 1 row in set (0.01 sec)
 
 
 mysql> select count(*) from sales_date;
 ERROR 1146 (42S02): Table 'sales.sales_date' doesn't exist
 mysql> select count(*) from sales_data;
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 | count(*) |
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 |     2605 |
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 1 row in set (0.00 sec)
 
 
 mysql> show indexes from sales_data;
-+HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
++HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODE+HIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE+
 | Table      | Non_unique | Key_name  | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
-+HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
++HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODE+HIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE+
 | sales_data |          1 | timestamp |            1 | timestamp   | A         |        2605 |     NULL |   NULL | YES  | BTREE      |         |               | YES     | NULL       |
-+HIDDENHIDDENHIDDEN+HIDDENHIDDENHIDDEN+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN--+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN---+HIDDENHIDDENHIDDEN-+HIDDENHIDDEN--+HIDDENHIDDEN+HIDDEN--+HIDDENHIDDENHIDDEN+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN---+HIDDENHIDDEN-+HIDDENHIDDENHIDDEN+
++HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODE--+HIDDENCODEHIDDENCODE+HIDDENCODE--+HIDDENCODEHIDDENCODEHIDDENCODE+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE---+HIDDENCODEHIDDENCODE-+HIDDENCODEHIDDENCODEHIDDENCODE+
 1 row in set (0.00 sec)
 
 
 mysql> select count(*) from sales_date;
 ERROR 1146 (42S02): Table 'sales.sales_date' doesn't exist
 mysql> select count(*) from sales_data;
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 | count(*) |
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 |     2605 |
-+HIDDENHIDDEN--+
++HIDDENCODEHIDDENCODE--+
 1 row in set (0.00 sec)
 
 
-mysql> mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN sales sales_data > sales_sales_data_dump.sql
+mysql> mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDENCODE sales sales_data > sales_sales_data_dump.sql
     -> \q
 Bye
-theia@theiadocker-peteshen40:/home/project$ mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDEN sales sales_data > sales_sales_data_dump.sql
+theia@theiadocker-peteshen40:/home/project$ mysqldump --host=127.0.0.1 --port=3306 --user=root --password=HIDDENCODE sales sales_data > sales_sales_data_dump.sql
 mysqldump: [Warning] Using a password on the command line interface can be insecure.
 theia@theiadocker-peteshen40:/home/project$

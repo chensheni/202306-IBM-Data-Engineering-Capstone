@@ -4,12 +4,12 @@ This process can take up to a minute.
       
 MySQL database started, waiting for all services to be ready....
       
-Your MySQL database is now ready to use and available with username: root password: MTg1NDMtcGV0ZXNo
+Your MySQL database is now ready to use and available with username: root password: HIDDENCODE
 
 You can access your MySQL database via:
  • The browser at: https://peteshen40-8080.theiadocker-2-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai
- • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=MTg1NDMtcGV0ZXNo
-r=root --password=MTg1NDMtcGV0ZXNo/project$ mysql --host=127.0.0.1 --port=3306 --user
+ • CommandLine: mysql --host=127.0.0.1 --port=3306 --user=root --password=HIDDENCODE
+r=root --password=HIDDENCODE/project$ mysql --host=127.0.0.1 --port=3306 --user
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 55
