@@ -1,4 +1,4 @@
-# Module 5: module5 Data Pipelines Using Apache AirFlow
+# Module 5: Data Pipelines Using Apache AirFlow
 
 ## Scenario
 
